@@ -1,0 +1,27 @@
+Home page:
+index.html
+
+
+Website description:
+This website is targeted at new NUS SoC students who are taking CS1010 and CS1020.
+It is intended to help them with the associated Practical Exams and Sit-In labs for these modules.
+The coding.html webpage is lacking some content, but is intended to help show how multiple pages would work in the navigation of the site.
+
+
+Grading Component Locations:
+Usage of a grid system: Mainly used in the navbar of all pages for responsiveness; the actual content always uses 12 columns.
+Responsive Design: Slight changes in the navbar to accommodate for smaller width; the actual content is automatically handed by Bootstrap.
+Any of the base CSS: Used across all pages. An example is the use of img-responsive in the "General" tab of unix.html.
+Any of the components: Navbar (all pages)
+Any of the Javascript category items: Tabs (unix.html). coding.html only uses 1 tab.
+
+Form validation: Suggestions box on index.html; js code in main.js
+jQuery effects: jQuery show in unix.html, at the bottom of the "Commands" tab; js code in main.js
+
+
+References used:
+The Bootstrap and jQuery main websites were referenced when making this website.
+
+
+Special Instructions:
+None.

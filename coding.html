@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tips for Coding Practical Exams/Sit-in Labs</title>
+    <link type="text/css" href="css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="css/main.css" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-1 visible-xs">
+                <div class="dropdown">
+                    <button class="btn btn-info center dropdown-toggle" type="button" id="dropdownMobileMenu"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMobileMenu">
+                        <li><a href="unix.html">Unix Environment</a></li>
+                        <li class="active"><a href="coding.html">Common Coding Mistakes</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xs-11 col-sm-12">
+                <div class="nav navbar-header">
+                    <a class="navbar-brand" href="index.html">Home</a>
+                </div>
+                <div class="collapse navbar-collapse navbar-default">
+                    <ul class="nav navbar-nav">
+                        <li><a href="unix.html">Unix Environment</a></li>
+                        <li class="active"><a href="coding.html">Common Coding Mistakes</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <h2>Common Coding Mistakes</h2>
+        <p>
+            Several mistakes can be made by newer students who are unfamiliar with the intricacies of C and Java, 
+            or how functions provided by their respective libraries behave. Here are some possible mistakes to look out for.
+        </p>
+    </div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#input" aria-controls="input" role="tab" data-toggle="tab">Input</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="input">
+                        <h2>Reading String Inputs</h2>
+                        <p>
+                            Reading inputs is usually relatively easy, but when strings are involved things may be a little more complicated. 
+                            Below are some ways to read in string inputs, and how they work.
+                        </p>
+                        <h3>Java</h3>
+                        <p>
+                            When mixing the <code>nextLine()</code> method with other methods from the Scanner class, note that while methods 
+                            such as <code>nextInt()</code> and <code>next()</code> do not read in whitespaces such as line feed characters(<code>&#92;n</code>), <code>nextLine()</code> does.<br>
+                            This may result in the case where using <code>nextLine()</code> immediately after a <code>nextInt()</code> or 
+                            <code>next()</code> results in it reading only a line feed character, which is unintended.<br>
+                            To handle this, using a <code>nextLine()</code> call to consume the line feed character would work.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tips for Coding Practical Exams/Sit-in Labs</title>
+    <link type="text/css" href="css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="css/main.css" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid top-navbar">
+        <div class="row">
+            <div class="col-xs-1 visible-xs">
+                <div class="dropdown">
+                    <button class="btn btn-info center dropdown-toggle" type="button" id="dropdownMobileMenu"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMobileMenu">
+                        <li class="active"><a href="unix.html">Unix Environment</a></li>
+                        <li><a href="coding.html">Common Coding Mistakes</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xs-11 col-sm-12">
+                <div class="nav navbar-header">
+                    <a class="navbar-brand" href="index.html">Home</a>
+                </div>
+                <div class="collapse navbar-collapse navbar-default">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="unix.html">Unix Environment</a></li>
+                        <li><a href="coding.html">Common Coding Mistakes</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <h2>Unix Environment</h2>
+        <p>
+            The Unix environment is heavily used for development work during CS1010 and CS1020.<br>
+            Here are a few tips to effectively use Unix for this purpose.
+        </p>
+    </div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#general" aria-controls="general" role="tab" data-toggle="tab">General</a></li>
+                    <li><a href="#vim" aria-controls="vim" role="tab" data-toggle="tab">Vim</a></li>
+                    <li><a href="#commands" aria-controls="commands" role="tab" data-toggle="tab">Commands</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="general">
+                        <h2>Terminal Layout</h2>
+                        <p>
+                            When using the Unix environment to code, it is advisable to use two terminals: 
+                            one for writing the program, and one for compiling and running the program.<br>
+                            This reduces the time required to switch between writing and compiling/running, 
+                            which may be done frequently when debugging code.
+                        </p>
+                        <img src="img/layout.png" class="img-responsive">
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="vim">
+                        <h2>Vim Commands</h2>
+                        <p>
+                            If using Vim to write code, the following Vim commands may prove useful.<br>
+                            All commands must be run in Command mode (not Insert mode).
+                        </p>
+                        <p>
+                            <code>gg=G</code>: Useful for auto-indenting code, and figuring out common errors such as a missed <code>}</code> symbol, 
+                            or certain lines of code accidentally being placed inside/outside a loop or conditional.
+                        </p>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="commands">
+                        <h2>Input/Output Redirection</h2>
+                        <p>
+                            In most cases, you will be provided with a set of sample input and output for your program.<br>
+                            Instead of manually typing in the input, it is possible to use a file to store your inputs (using <code>&lt</code>), 
+                            and then redirect it to the program when running. This should be done when running the program.<br>
+                            <strong>Example for C:</strong> <code>./a.out &lt myinput</code><br>
+                            <strong>Example for Java:</strong> <code>java MyProgram &lt myinput</code>
+                        </p>
+                        <p>
+                            This can also be combined with output redirection (using <code>&gt</code>) to redirect your output to another file.<br>
+                            <strong>Example for C:</strong> <code>./a.out &lt myinput &gt myoutput</code><br>
+                            <strong>Example for Java:</strong> <code>java MyProgram &lt myinput &gt myoutput</code><br>
+                            Note that the above examples assume that the file <em>myoutput</em> does not exist. To overwrite a file if it exists, 
+                            use either <code>&gt&#33;</code> or <code>&gt&#124;</code> (depending on environment settings) instead of <code>&gt</code>. 
+                        </p>
+                        <h2>File Comparison</h2>
+                        <p>
+                            There are two different commands for comparing files, both of which use the same format:<br>
+                            <code>cmp file1 file2</code> or <code>diff file1 file2</code>, where file1 and file2 are two files to be compared.<br>
+                            Combining this with output redirection, it makes comparing output much easier, 
+                            as you can compare the output generated by your program (saved to a file) and the expected output.<br>
+                            Therefore, it becomes possible to do the following sequence of commands to compile, run and compare the output of your program:<br>
+                        </p>
+                        <button id="compare-panel-btn" class="btn btn-default">Click to show</button>
+                        <div id="compare-panel">
+                            <strong>Example for C:</strong><br>
+                            <code>
+                                gcc myprogram.c<br>
+                                ./a.out &lt sampleinput.in &gt myoutput.out<br>
+                                cmp myoutput.out sampleoutput.out<br>
+                            </code>
+                            <strong>Example for Java:</strong><br>
+                            <code>
+                                javac MyProgram.java<br>
+                                java MyProgram &lt sampleinput.in &gt myoutput.out<br>
+                                cmp myoutput.out sampleoutput.out<br>
+                            </code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>

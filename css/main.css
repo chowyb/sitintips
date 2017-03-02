@@ -1,0 +1,11 @@
+.index-body {
+    font-size: 16px;
+}
+
+#compare-panel {
+    display: none;
+}
+
+#suggest-result {
+    display: none;
+}
